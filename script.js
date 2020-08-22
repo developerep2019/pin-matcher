@@ -20,8 +20,8 @@ function getNumberFromBtn(passingNumber){
 //Main Checking Interaction
 document.getElementById('submitBtn').addEventListener('click' , function(){
     const GeneratedNumber = parseFloat(document.getElementById('GeneratedNumber').value);
+    const Input = document.getElementById('PinNumberDisplay').value;
     const InputNumber = parseFloat(document.getElementById('PinNumberDisplay').value);
-
     if(GeneratedNumber === InputNumber) {
         document.getElementById('notifyRight').style.display = 'block';
         document.getElementById('notifyWrong').style.display = 'none';
@@ -29,6 +29,20 @@ document.getElementById('submitBtn').addEventListener('click' , function(){
     else{
         document.getElementById('notifyWrong').style.display = 'block';
         document.getElementById('notifyRight').style.display = 'none';
+
+        // How Many Tries Left Calculator
+        const chanceLeft = document.getElementById('chanceLeft').innerText;
+        const chanceLeftToNumber = parseFloat(chanceLeft);
+        
+        if(chanceLeftToNumber <= 3 && chanceLeftToNumber > 1) {
+            document.getElementById('chanceLeft').innerText = chanceLeftToNumber - 1;
+        }
+        else if(chanceLeftToNumber == 1){
+            const submitBtnBlock = document.getElementById('submitBtn');
+            submitBtnBlock.setAttribute('disabled' , 'disabled');
+            submitBtnBlock.style.backgroundColor = '#dc3545';
+            document.getElementById('chanceLeft').innerText = 0;
+        }
     }
 })
 
@@ -36,3 +50,11 @@ document.getElementById('submitBtn').addEventListener('click' , function(){
 document.getElementById('clear').addEventListener('click' , function(){
     document.getElementById('PinNumberDisplay').value = null;
 })
+
+//Last Item Left Function
+function removeLastNumFromInput(){
+    const removeLastNum = document.getElementById('PinNumberDisplay').value;
+    const convertToString = removeLastNum.toString(removeLastNum.length);
+    const deleteLastNum = convertToString.slice(0, -1);
+    document.getElementById('PinNumberDisplay').value = deleteLastNum;
+}
