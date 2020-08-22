@@ -37,13 +37,13 @@
                               <input class="button" value="3" type="button" onclick="getNumberFromBtn(this.value)">
                             </div>
                             <div class="calc-button-row">
-                                <input class="button" id="clear1Value" value="<" type="button" >
+                                <input class="button" id="clear1Value" value="<" type="button" onclick="removeLastNumFromInput()">
                                 <input class="button" value="0" type="button" onclick="getNumberFromBtn(this.value)">
                                 <input class="button" value="C" type="button" id="clear">
                             </div>
                             <div>
                                 <input type="submit" class="submit-btn" id="submitBtn" value="Submit">
-                                <p class="action-left">3 try left</p>
+                                <p class="action-left"><span id="chanceLeft">3</span> try left</p>
                             </div>
                     </div>
                 </div>
