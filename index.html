@@ -12,33 +12,33 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="pin-generator half-width">
-                    <input class="form-control text-center" type="text" id="GeneratedNumber">
+                    <input class="form-control text-center" type="text" id="GeneratedNumber" readonly>
                     <button class="generate-btn">Generate Pin</button>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="input-section half-width">
-                    <input class="form-control text-center" type="text" id="PinNumberDisplay">
+                    <input class="form-control text-center" type="text" id="PinNumberDisplay" readonly>
                     <div class="numbers">
                         <div class="calc-body">
                             <div class="calc-button-row">
-                              <input type="button" value="7" class="button" onclick="mainValue(this.value)">
-                              <input class="button" value="8" type="button" onclick="mainValue(this.value)">
-                              <input class="button" value="9" type="button" onclick="mainValue(this.value)">
+                              <input type="button" value="7" class="button" onclick="getNumberFromBtn(this.value)">
+                              <input class="button" value="8" type="button" onclick="getNumberFromBtn(this.value)">
+                              <input class="button" value="9" type="button" onclick="getNumberFromBtn(this.value)">
                             </div>
                             <div class="calc-button-row">
-                              <input class="button" value="4" type="button" onclick="mainValue(this.value)">
-                              <input class="button" value="5" type="button" onclick="mainValue(this.value)">
-                              <input class="button" value="6" type="button" onclick="mainValue(this.value)">
+                              <input class="button" value="4" type="button" onclick="getNumberFromBtn(this.value)">
+                              <input class="button" value="5" type="button" onclick="getNumberFromBtn(this.value)">
+                              <input class="button" value="6" type="button" onclick="getNumberFromBtn(this.value)">
                             </div>
                             <div class="calc-button-row">
-                              <input class="button" value="1" type="button" onclick="mainValue(this.value)">
-                              <input class="button" value="2" type="button" onclick="mainValue(this.value)">
-                              <input class="button" value="3" type="button" onclick="mainValue(this.value)">
+                              <input class="button" value="1" type="button" onclick="getNumberFromBtn(this.value)">
+                              <input class="button" value="2" type="button" onclick="getNumberFromBtn(this.value)">
+                              <input class="button" value="3" type="button" onclick="getNumberFromBtn(this.value)">
                             </div>
                             <div class="calc-button-row">
                                 <input class="button" id="clear1Value" value="<" type="button" >
-                                <input class="button" value="0" type="button" onclick="mainValue(this.value)">
+                                <input class="button" value="0" type="button" onclick="getNumberFromBtn(this.value)">
                                 <input class="button" value="C" type="button" id="clear">
                             </div>
                             <div>

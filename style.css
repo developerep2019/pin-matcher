@@ -122,3 +122,7 @@ color: #E0B612;
 #submitBtn:hover{
     background-color: #39458C;
 }
+
+#GeneratedNumber,#PinNumberDisplay{
+    background-color : #3D4153;
+}

@@ -1,7 +1,8 @@
+//Random Number Generator 
 function returnRandomNumber() {
-    let step1 = 9999 - 1000 + 1;
-    let step2 = Math.random() * step1;
-    let result = Math.floor(step2) + 1000;
+    const howManyCombinations = 9999 - 1000 + 1;
+    const NumberGenerated = Math.random() * howManyCombinations;
+    let result = Math.floor(NumberGenerated) + 1000;
     return result
 }
 
@@ -9,12 +10,14 @@ document.querySelector('.generate-btn').addEventListener('click' , function() {
     document.getElementById('GeneratedNumber').value = returnRandomNumber();
 })
 
-function mainValue(x){
+//Getting Number for Checking in PinNumberDisplay Input Tag
+function getNumberFromBtn(passingNumber){
     const previousValue = document.getElementById('PinNumberDisplay').value;
-    document.getElementById('PinNumberDisplay').value = previousValue + x;
+    document.getElementById('PinNumberDisplay').value = previousValue + passingNumber;
     
 }
 
+//Main Checking Interaction
 document.getElementById('submitBtn').addEventListener('click' , function(){
     const GeneratedNumber = parseFloat(document.getElementById('GeneratedNumber').value);
     const InputNumber = parseFloat(document.getElementById('PinNumberDisplay').value);
@@ -29,6 +32,7 @@ document.getElementById('submitBtn').addEventListener('click' , function(){
     }
 })
 
+//Making the PinNumberDisplay input Empty
 document.getElementById('clear').addEventListener('click' , function(){
     document.getElementById('PinNumberDisplay').value = null;
 })
