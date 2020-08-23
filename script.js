@@ -17,31 +17,35 @@ function getNumberFromBtn(passingNumber){
     
 }
 
-//Main Checking Interaction
+//Submit Btn Interaction
 document.getElementById('submitBtn').addEventListener('click' , function(){
     const GeneratedNumber = parseFloat(document.getElementById('GeneratedNumber').value);
     const Input = document.getElementById('PinNumberDisplay').value;
     const InputNumber = parseFloat(document.getElementById('PinNumberDisplay').value);
-    if(GeneratedNumber === InputNumber) {
-        document.getElementById('notifyRight').style.display = 'block';
-        document.getElementById('notifyWrong').style.display = 'none';
+    if(Input == '') {
+        alert("Please Give Me a Valid Number. I Can't Take a Empty Number")
     }
     else{
-        document.getElementById('notifyWrong').style.display = 'block';
-        document.getElementById('notifyRight').style.display = 'none';
-
-        // How Many Tries Left Calculator
-        const chanceLeft = document.getElementById('chanceLeft').innerText;
-        const chanceLeftToNumber = parseFloat(chanceLeft);
-        
-        if(chanceLeftToNumber <= 3 && chanceLeftToNumber > 1) {
-            document.getElementById('chanceLeft').innerText = chanceLeftToNumber - 1;
+        if(GeneratedNumber === InputNumber) {
+            document.getElementById('notifyRight').style.display = 'block';
+            document.getElementById('notifyWrong').style.display = 'none';
         }
-        else if(chanceLeftToNumber == 1){
-            const submitBtnBlock = document.getElementById('submitBtn');
-            submitBtnBlock.setAttribute('disabled' , 'disabled');
-            submitBtnBlock.style.backgroundColor = '#dc3545';
-            document.getElementById('chanceLeft').innerText = 0;
+        else{
+            document.getElementById('notifyWrong').style.display = 'block';
+            document.getElementById('notifyRight').style.display = 'none';
+    
+            // How Many Tries Left Calculator
+            const chanceLeft = document.getElementById('chanceLeft').innerText;
+            const chanceLeftToNumber = parseFloat(chanceLeft);
+            if(chanceLeftToNumber <= 3 && chanceLeftToNumber > 1) {
+                document.getElementById('chanceLeft').innerText = chanceLeftToNumber - 1;
+            }
+            else if(chanceLeftToNumber == 1){
+                const submitBtnBlock = document.getElementById('submitBtn');
+                submitBtnBlock.setAttribute('disabled' , 'disabled');
+                submitBtnBlock.style.backgroundColor = '#dc3545';
+                document.getElementById('chanceLeft').innerText = 0;
+            }
         }
     }
 })
